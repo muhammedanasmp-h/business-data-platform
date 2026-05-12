@@ -1,8 +1,11 @@
 import pandas as pd
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
 # MongoDB connection
-MONGO_URI = "mongodb+srv://admin:1212@cluster0.77mbk0l.mongodb.net/?appName=Cluster0"
+load_dotenv()
+MONGO_URI = os.getenv("MONGO_URI")
 
 client = MongoClient(MONGO_URI)
 
